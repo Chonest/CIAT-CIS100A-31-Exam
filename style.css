@@ -168,13 +168,40 @@ body{
     user-select: none;
 }
 
-.quiz_box header .time_line{
+.quiz_box header .time_line {
     position: absolute;
     bottom: 0px;
     left: 0px;
     height: 3px;
-    background: #007bff;
+    background: #007bff; /* Default Blue */
+    width: 0; /* Dynamically updated by JS */
+    transition: background 0.3s ease, width 0.3s ease; /* Smooth transitions */
 }
+
+/* Timer turns orange halfway */
+.quiz_box header .time_line.orange {
+    background: #ffa500; /* Orange */
+}
+
+/* Timer turns red with pulsing effect */
+.quiz_box header .time_line.red {
+    background: #ff0000; /* Red */
+    animation: pulse 1s infinite; /* Pulsing animation */
+}
+
+/* Red pulsing animation */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 section{
     padding: 25px 30px 20px 30px;
