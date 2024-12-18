@@ -158,12 +158,12 @@ let questions = [
   },
   {
     question: "During a virtual lecture on Teams, a student wants to share a presentation with the class. Which option should they choose?",
-    answer: "‘Share Screen’s",
+    answer: "Share Screen",
     options: [
-      "‘Start Recording’",
-      "‘Meet Now’",
-      "‘Share Screen’",
-      "‘Raise Hand’"
+      "Start Recording",
+      "Meet Now",
+      "Share Screen",
+      "Raise Hand"
     ]
   },
   {
