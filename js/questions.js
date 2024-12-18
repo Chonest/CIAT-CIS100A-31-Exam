@@ -946,10 +946,10 @@ let questions = [
     question: "Explain the benefits of using ‘Slide Master’ for uniformity across a presentation.",
     answer: "It allows for consistent design elements across all slides.",
     options: [
-      "It provides a backup of the presentation",
-      "It times the slides for automatic progression",
-      "It allows for consistent design elements across all slides",
-      "It adds special effects to the presentation’s animations"
+      "It provides a backup of the presentation.",
+      "It times the slides for automatic progression.",
+      "It allows for consistent design elements across all slides.",
+      "It adds special effects to the presentation’s animations."
       ]
   },
   {
