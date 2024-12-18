@@ -1,3 +1,12 @@
+// Shuffle function to randomize arrays
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 // Selecting all required elements
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
@@ -10,8 +19,16 @@ const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 
+let timeValue = 60;
+let que_count = 0;
+let userScore = 0;
+let counter;
+let counterLine;
+let shuffledQuestions = []; // Array to hold shuffled questions
+
 // If startQuiz button clicked
 start_btn.onclick = () => {
+    shuffledQuestions = shuffleArray([...questions]); // Shuffle questions
     info_box.classList.add("activeInfo"); // Show info box
 };
 
@@ -27,42 +44,31 @@ continue_btn.onclick = () => {
     showQuestions(0); // Call showQuestions function
     queCounter(1); // Initialize question counter
     startTimer(60); // Start the timer
-    time_line.className = "time_line"; // Reset the time line classes
-    time_line.style.width = "0"; // Reset the time line width
+    time_line.style.width = "0"; // Reset the time line
     startTimerLine(); // Start the timer line
 };
-
-let timeValue = 60;
-let que_count = 0;
-let que_numb = 1;
-let userScore = 0;
-let counter;
-let counterLine;
 
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
 // If restartQuiz button clicked
 restart_quiz.onclick = () => {
+    shuffledQuestions = shuffleArray([...questions]); // Reshuffle the questions
     quiz_box.classList.add("activeQuiz"); // Show quiz box
     result_box.classList.remove("activeResult"); // Hide result box
     timeValue = 60;
     que_count = 0;
-    que_numb = 1;
     userScore = 0;
-    time_line.className = "time_line"; // Reset the time line classes
-    time_line.style.width = "0"; // Reset the time line width
     showQuestions(que_count); // Show the first question
-    queCounter(que_numb); // Initialize question counter
+    queCounter(1); // Initialize question counter
     clearInterval(counter); // Clear timer
     clearInterval(counterLine); // Clear timer line
     startTimer(timeValue); // Restart the timer
+    time_line.style.width = "0"; // Reset the time line
     startTimerLine(); // Restart the timer line
     timeText.textContent = "Time Left"; // Reset timer text
-    next_btn.classList.remove("show"); // Hide the next button
 };
 
-// If quitQuiz button clicked
 quit_quiz.onclick = () => {
     window.location.reload(); // Reload the current window
 };
@@ -72,86 +78,80 @@ const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // If Next Question button clicked
 next_btn.onclick = () => {
-    if (que_count < questions.length - 1) { // If more questions are available
-        que_count++; // Increment question count
-        que_numb++; // Increment question number
+    if (que_count < shuffledQuestions.length - 1) {
+        que_count++;
         showQuestions(que_count); // Show the next question
-        queCounter(que_numb); // Update question counter
-        clearInterval(counter); // Clear timer
-        clearInterval(counterLine); // Clear timer line
+        queCounter(que_count + 1); // Update question counter
+        clearInterval(counter);
+        clearInterval(counterLine);
         startTimer(timeValue); // Restart the timer
-        time_line.className = "time_line"; // Reset the time line classes
-        time_line.style.width = "0"; // Reset the time line width
+        time_line.style.width = "0"; // Reset the time line
         startTimerLine(); // Restart the timer line
         timeText.textContent = "Time Left"; // Reset timer text
         next_btn.classList.remove("show"); // Hide the next button
     } else {
-        clearInterval(counter); // Clear timer
-        clearInterval(counterLine); // Clear timer line
+        clearInterval(counter);
+        clearInterval(counterLine);
         showResult(); // Show the result box
     }
 };
 
-// Getting questions and options from array
+// Show questions function
 function showQuestions(index) {
     const que_text = document.querySelector(".que_text");
+    const currentQuestion = shuffledQuestions[index];
+    const shuffledOptions = shuffleArray([...currentQuestion.options]); // Shuffle options
 
-    // Add the question text
-    let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
+    // Reset time_line styles
+    time_line.className = "time_line"; // Reset to default class
+    time_line.style.width = "0"; // Reset the width to 0
+
+    let que_tag = `<span>${index + 1}. ${currentQuestion.question}</span>`; // Add dynamic numbering
     que_text.innerHTML = que_tag;
 
-    // Dynamically generate options
     let option_tag = '';
-    questions[index].options.forEach(option => {
-        option_tag += '<div class="option"><span>' + option + '</span></div>';
+    shuffledOptions.forEach(option => {
+        option_tag += `<div class="option"><span>${option}</span></div>`;
     });
 
-    option_list.innerHTML = option_tag; // Insert options into the option_list container
+    option_list.innerHTML = option_tag;
 
-    // Add click event listeners to options
     const options = option_list.querySelectorAll(".option");
     options.forEach(option => {
         option.setAttribute("onclick", "optionSelected(this)");
     });
 }
 
-// Icons for correct and incorrect answers
-let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
-let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
 // If user clicked on an option
 function optionSelected(answer) {
-    clearInterval(counter); // Clear timer
-    clearInterval(counterLine); // Clear timer line
+    clearInterval(counter);
+    clearInterval(counterLine);
 
-    let userAns = answer.textContent.trim(); // Get selected answer
-    let correctAns = questions[que_count].answer; // Get correct answer
-    const allOptions = option_list.children.length; // Get total number of options
+    let userAns = answer.textContent.trim();
+    let correctAns = shuffledQuestions[que_count].answer;
 
-    if (userAns === correctAns) { // If the answer is correct
-        userScore += 1; // Increment score
-        answer.classList.add("correct"); // Mark as correct
-        answer.insertAdjacentHTML("beforeend", tickIconTag); // Add tick icon
+    if (userAns === correctAns) {
+        userScore++;
+        answer.classList.add("correct");
     } else {
-        answer.classList.add("incorrect"); // Mark as incorrect
-        answer.insertAdjacentHTML("beforeend", crossIconTag); // Add cross icon
-
-        // Highlight the correct answer
-        for (let i = 0; i < allOptions; i++) {
-            if (option_list.children[i].textContent.trim() === correctAns) {
-                option_list.children[i].setAttribute("class", "option correct");
-                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag);
+        answer.classList.add("incorrect");
+        option_list.querySelectorAll(".option").forEach(opt => {
+            if (opt.textContent.trim() === correctAns) {
+                opt.classList.add("correct");
             }
-        }
+        });
     }
 
-    // Disable all options after an answer is selected
-    for (let i = 0; i < allOptions; i++) {
-        option_list.children[i].classList.add("disabled");
-    }
+    option_list.querySelectorAll(".option").forEach(opt => {
+        opt.classList.add("disabled");
+    });
 
-    next_btn.classList.add("show"); // Show the Next button
+    next_btn.classList.add("show");
 }
+
+// Timer and other functions remain unchanged...
+
 
 // Timer functions
 function startTimer(duration) {
@@ -173,7 +173,9 @@ function startTimerLine() {
     let maxWidth = 550; // Maximum width of the time line in pixels
     let totalDuration = 60 * 1000; // Total duration in milliseconds
     let elapsed = 0; // Track elapsed time
-    let increment = maxWidth / (totalDuration / 10); // Increment per 10ms interval
+
+    clearInterval(counterLine); // Clear any previous intervals
+    time_line.className = "time_line"; // Reset to default class
 
     counterLine = setInterval(() => {
         elapsed += 10; // Increment elapsed time
@@ -195,6 +197,7 @@ function startTimerLine() {
         }
     }, 10); // 10ms interval for smoother animation
 }
+
 
 // Automatically select the correct answer when time runs out
 function autoSelectCorrectAnswer(isUserAction = true) {
