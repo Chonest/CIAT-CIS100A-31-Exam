@@ -531,5 +531,417 @@ let questions = [
       "Write the formula again in the new cell",
       "Use the AutoSum feature"
     ]
+  },
+  {
+    question: "What is the action of duplicating a file for safekeeping by using the 'Copy' command in Windows?",
+    answer: "Copying (File)",
+    options: [
+      "Renaming (File)",
+      "Deleting (File)",
+      "Copying (File)",
+      "Data Management"
+    ]
+  },
+  {
+    question: "What is the process of changing the name of a file by right-clicking it and selecting 'Rename'?",
+    answer: "Renaming (File)",
+    options: [
+      "Deleting (File)",
+      "Renaming (File)",
+      "Folders",
+      "Tile Organization"
+    ]
+  },
+  {
+    question: "Which action involves removing a file by right-clicking it and selecting 'Delete'?",
+    answer: "Deleting (File)",
+    options: [
+      "Copying (File)",
+      "Renaming (File)",
+      "Deleting (File)",
+      "USB Ports"
+    ]
+  },
+  {
+    question: "What are directories used to organize files, often created within File Explorer?",
+    answer: "Folders",
+    options: [
+      "Folders",
+      "Tile Organization",
+      "Disk Drive Configurations",
+      "Special Keys"
+    ]
+  },
+  {
+    question: "What is the act of rearranging tiles on the Start screen by clicking and dragging them into a new arrangement?",
+    answer: "Tile Organization",
+    options: [
+      "Tile Organization",
+      "Data Management",
+      "Plagiarism",
+      "Cornell notes"
+    ]
+  },
+  {
+    question: "What are keys such as F1-F12, which provide quick access to help and other functions?",
+    answer: "Function and Control Keys",
+    options: [
+      "Special Keys",
+      "Function and Control Keys",
+      "USB Ports",
+      "Mnemonic triggers"
+    ]
+  },
+  {
+    question: "Which keys perform specific functions, such as Caps Lock for toggling uppercase letters?",
+    answer: "Special Keys",
+    options: [
+      "Special Keys",
+      "Function and Control Keys",
+      "Pattern notes",
+      "Plagiarism"
+    ]
+  },
+  {
+    question: "What term refers to different arrangements of disk drives, such as floppy drives and CD-ROM drives, within a computer system?",
+    answer: "Disk Drive Configurations",
+    options: [
+      "Data Management",
+      "Disk Drive Configurations",
+      "Folders",
+      "Concept map"
+    ]
+  },
+  {
+    question: "What are universal connectors found on computers used to connect a wide range of peripherals?",
+    answer: "USB Ports",
+    options: [
+      "Special Keys",
+      "USB Ports",
+      "Disk Drive Configurations",
+      "Plagiarism"
+    ]
+  },
+  {
+    question: "What term describes practices involving handling data stored on hard disks or networks, emphasizing quick access?",
+    answer: "Data Management",
+    options: [
+      "Data Management",
+      "USB Ports",
+      "Mnemonic triggers",
+      "Cornell notes"
+    ]
+  },
+  {
+    question: "What is considered a major academic offense that can result in failing a module or even annulment of a degree?",
+    answer: "Plagiarism",
+    options: [
+      "Plagiarism",
+      "Cornell notes",
+      "Pattern notes",
+      "Concept map"
+    ]
+  },
+  {
+    question: "Which notes are the most common form of note-making adopted by students and university staff?",
+    answer: "Linear notes",
+    options: [
+      "Cornell notes",
+      "Pattern notes",
+      "Mnemonic triggers",
+      "Linear notes"
+    ]
+  },
+  {
+    question: "Which type of notes require analytical and critical engagement by promoting active interaction with ideas?",
+    answer: "Cornell notes",
+    options: [
+      "Linear notes",
+      "Cornell notes",
+      "Pattern notes",
+      "Concept map"
+    ]
+  },
+  {
+    question: "What is a graphical, hierarchical representation of key concepts?",
+    answer: "Concept map",
+    options: [
+      "Pattern notes",
+      "Concept map",
+      "Mnemonic triggers",
+      "Plagiarism"
+    ]
+  },
+  {
+    question: "Which type of notes refer to any non-linear format and are highly recommended by students?",
+    answer: "Pattern notes",
+    options: [
+      "Cornell notes",
+      "Pattern notes",
+      "Concept map",
+      "Mnemonic triggers"
+    ]
+  },
+  {
+    question: "What term describes colors, pictures, diagrams, and unusual elements added to notes to enhance learning?",
+    answer: "Mnemonic triggers",
+    options: [
+      "Linear notes",
+      "Pattern notes",
+      "Mnemonic triggers",
+      "Cornell notes"
+    ]
+  },
+  {
+    question: "Which cycle helps commit information to long-term memory by building and reinforcing memories?",
+    answer: "Memory Cycle",
+    options: [
+      "Plagiarism",
+      "Memory Cycle",
+      "Cornell notes",
+      "Pattern notes"
+    ]
+  },
+  {
+    question: "What is a powerful spreadsheet tool used for data organization, calculation, and analysis in various academic and professional settings?",
+    answer: "Excel",
+    options: [
+      "Word",
+      "Excel",
+      "PowerPoint",
+      "Access"
+    ]
+  },
+  {
+    question: "What component of the Excel workspace includes core tabs like Home, Insert, and Page Layout, providing access to commonly used commands and features?",
+    answer: "Ribbon",
+    options: [
+      "Ribbon",
+      "Quick Access Toolbar",
+      "Formula Bar",
+      "Status Bar"
+    ]
+  },
+  {
+    question: "What is a file in Excel containing one or more worksheets, used to store and organize data, calculations, and analyses?",
+    answer: "Workbook",
+    options: [
+      "Worksheet",
+      "Workbook",
+      "Table",
+      "Chart"
+    ]
+  },
+  {
+    question: "What are individual boxes in an Excel worksheet where data is entered and displayed; fundamental units for storing and manipulating data?",
+    answer: "Cells",
+    options: [
+      "Columns",
+      "Rows",
+      "Cells",
+      "Tabs"
+    ]
+  },
+  {
+    question: "What is the command in Excel's Ribbon used for automatically calculating the sum of a selected range of cells?",
+    answer: "AutoSum",
+    options: [
+      "Sort",
+      "Filter",
+      "AutoSum",
+      "Pivot Table"
+    ]
+  },
+  {
+    question: "What are key combinations like 'Ctrl + Z' for Undo, 'Ctrl + C' for Copy, and 'Ctrl + V' for Paste, used to speed up navigation and data editing in Excel?",
+    answer: "Keyboard Shortcuts",
+    options: [
+      "Formula Functions",
+      "Keyboard Shortcuts",
+      "Quick Access Toolbar",
+      "Cell Formatting"
+    ]
+  },
+  {
+    question: "What are features in Excel used for organizing and analyzing data, allowing users to sort data alphabetically or numerically and filter out specific information based on criteria?",
+    answer: "Sort & Filter",
+    options: [
+      "AutoSum",
+      "Data Validation",
+      "Sort & Filter",
+      "Conditional Formatting"
+    ]
+  },
+  {
+    question: "What is a single page within an Excel workbook where data is entered and managed, forming part of the overall data set in a workbook?",
+    answer: "Worksheet",
+    options: [
+      "Worksheet",
+      "Workbook",
+      "Cell",
+      "Chart"
+    ]
+  },
+  {
+    question: "What feature in Excel lets you emphasize data by changing its appearance in a cell (or range of cells) automatically?",
+    answer: "Conditional Formatting",
+    options: [
+      "Data Validation",
+      "Sort & Filter",
+      "Conditional Formatting",
+      "Formula Auditing"
+    ]
+  },
+  {
+    question: "What functions in Excel are used to organize data in ascending (low to high) or descending (high to low) order, enhancing data analysis and readability?",
+    answer: "Sort Ascending/Descending",
+    options: [
+      "Conditional Formatting",
+      "Sort Ascending/Descending",
+      "Filter",
+      "AutoSum"
+    ]
+  },
+  {
+    question: "What types of entries in Excel include text, numbers, dates, and logical entries (such as T/F)?",
+    answer: "Values",
+    options: [
+      "Values",
+      "Labels",
+      "Formulas",
+      "Comments"
+    ]
+  },
+  {
+    question: "What keyboard key sequence returns the cell pointer to cell A1?",
+    answer: "CTRL and HOME",
+    options: [
+      "CTRL and END",
+      "CTRL and HOME",
+      "ALT and HOME",
+      "SHIFT and END"
+    ]
+  },
+  {
+    question: "What type of cell is devoid of any value in it?",
+    answer: "Empty Cell",
+    options: [
+      "Blank Cell",
+      "Empty Cell",
+      "Value Cell",
+      "Formula Cell"
+    ]
+  },
+  {
+    question: "What type of cell appears with no value but may still have a value stored in it?",
+    answer: "Blank Cell",
+    options: [
+      "Blank Cell",
+      "Empty Cell",
+      "Value Cell",
+      "Formula Cell"
+    ]
+  },
+  {
+    question: "What type of cell value allows you to perform a mathematical function?",
+    answer: "Formulas",
+    options: [
+      "Formulas",
+      "Values",
+      "Labels",
+      "Logical Entries"
+    ]
+  },
+  {
+    question: "Which characters typically begin a formula in a cell?",
+    answer: "=, -, +",
+    options: [
+      "=, -, +",
+      "/, *, %",
+      "<, >, =",
+      "+, -, *"
+    ]
+  },
+  {
+    question: "What option in Excel allows you to preview your document on the screen if you so choose?",
+    answer: "Print Preview",
+    options: [
+      "Page Layout",
+      "Print Preview",
+      "Save As",
+      "Format Painter"
+    ]
+  },
+  {
+    question: "What is a series of pages in PowerPoint, which can effectively communicate your ideas to your audience?",
+    answer: "Slides",
+    options: [
+      "Slides",
+      "Deck",
+      "Outline",
+      "Notes"
+    ]
+  },
+  {
+    question: "Which view in PowerPoint splits the window into three sections—a slide/outline pane at the left, the presentation at the right, and a section for notes at the bottom?",
+    answer: "Normal",
+    options: [
+      "Slide Sorter",
+      "Normal",
+      "Reading",
+      "Presenter"
+    ]
+  },
+  {
+    question: "Which keyboard key sequence causes PowerPoint to change the mouse pointer into a 'pen' for temporarily drawing on the slide during a presentation?",
+    answer: "CTRL and P",
+    options: [
+      "CTRL and P",
+      "CTRL and D",
+      "CTRL and M",
+      "CTRL and T"
+    ]
+  },
+  {
+    question: "When printing PowerPoint slides, which option from the drop-down list lets you select full-page slides, handouts, notes pages, or your outline?",
+    answer: "Layout",
+    options: [
+      "Format",
+      "Design",
+      "Layout",
+      "Options"
+    ]
+  },
+  {
+    question: "Which feature in PowerPoint lets you choose the overall style or 'look' of your presentation?",
+    answer: "Design Theme",
+    options: [
+      "Slide Master",
+      "Design Theme",
+      "Transitions",
+      "Animations"
+    ]
+  },
+  {
+    question: "What is the special visual effect in PowerPoint that moves from one slide to the next?",
+    answer: "Transitions",
+    options: [
+      "Animations",
+      "Morph Transition",
+      "Transitions",
+      "Slide Effects"
+    ]
+  },
+  {
+    question: "Which feature in PowerPoint animates objects by creating the appearance of movement on a slide?",
+    answer: "Morph Transition",
+    options: [
+      "Morph Transition",
+      "Slide Transition",
+      "Design Theme",
+      "Animation Pane"
+    ]
   }
 ];
+
+
